@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Customer;
+use App\Models\Week;
+use App\Models\Route as RouteModel;
+use Inertia\Inertia;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +19,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $customer = Customer::query()->get();
+    $week = Week::query()->get();
+    $route = RouteModel::query()->get();
+    return Inertia::render('DashboardView', [
+        'customer' => $customer,
+        'week' => $week,
+        'route' => $route
+    ]);
 });
