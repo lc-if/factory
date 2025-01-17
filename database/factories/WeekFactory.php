@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\WeekStatus;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,9 +18,9 @@ class WeekFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->word(),
-            'status' => rand(0, 1) ? 'active' : 'inactive',
-            'year' => fake()->numberBetween(2022, 2025) 
+            'name' => fake()->unique()->word(),
+            'status' =>WeekStatus::INACTIVE,
+            'year' => fake()->numberBetween(2023, 2025) 
         ];
     }
 }

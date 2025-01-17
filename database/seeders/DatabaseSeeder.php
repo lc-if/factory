@@ -22,8 +22,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             RouteSeeder::class,
-            //CustomerSeeder::class,
-            //WeekSeeder::class
+            WeekSeeder::class,
+            CustomerSeeder::class,
         ]);
     }
 }

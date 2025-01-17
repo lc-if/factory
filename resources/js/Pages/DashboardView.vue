@@ -11,14 +11,31 @@ const props = defineProps({
 
 <template>
     <div class="grid grid-cols-3 p-4">
-        <div class="grid-span-1">
-            {{ customer }}
+        <div class="grid-span-1 border-2">
+            <div v-for="c in customer" class="flex justify-between border-2">
+                <div>
+                {{ c.name }}
+                </div>
+                <div>
+                    {{ c.route_id }}
+                </div>
+            </div>
         </div>
-        <div class="grid-span-1">
-            {{ week }}
+
+        <div class="grid-span-1 border-2">
+            <div v-for="w in week" class="flex justify-between border-2">
+                <div>
+                    {{ w.name }}
+                </div>
+            </div>
         </div>
-        <div class="grid-span-1">
-            {{ route }}
+
+        <div class="grid-span-1 border-2">
+            <div v-for="r in route" class="flex justify-between border-2">
+                <div>
+                    {{ r.name }}
+                </div>
+            </div>
         </div>
     </div>
     
